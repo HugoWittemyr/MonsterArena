@@ -10,7 +10,6 @@ import java.util.Scanner;
 public class MonsterArena {
 
     public static void main(String[] args) {
-
         // Skapar en lista med olika monstren
         monsters.add(new Dragon());
         monsters.add(new Robot());
@@ -70,15 +69,15 @@ public class MonsterArena {
             case 3: // Startar matchen
                 match(order);
                 reShuffle();
-                input.next();
+                System.console().readLine();
                 break;
-            case 4: // Måste lägga in en topplista
+            case 4: // Skriver ut topplistan
                 rankings();
                 break;
             case 5: // Skiver ut beskrivningen för alla monster
                 for (Monster monster : monsters)
                     monster.description();
-                input.next();
+                System.console().readLine();
                 break;
             case 6: // Avslutar programmet
                 gameActive = false;
@@ -171,8 +170,6 @@ public class MonsterArena {
                 round++;
             }
 
-            
-
             if(first.getHealth() <= 0) {
                 System.out.println(first.getName() + " har inget HP kvar. " + second.getName() + " har vunnit matchen!");
                 first.resetHealth();
@@ -190,7 +187,7 @@ public class MonsterArena {
             }
 
             try { // Gör så att det tar 0,5 sekunder mellan varje attack, gör det enklare och roligare att se vad som händer i matchen.
-            Thread.sleep(500);
+            Thread.sleep(1250);
             }
             catch(InterruptedException ex) {} // Ingen aning vad denna biten gör men den behöver finnas där
         }

@@ -32,4 +32,5 @@ public class Robot extends Monster implements SpecialAttack {
         }
         return damage;
     }
+    
 }
